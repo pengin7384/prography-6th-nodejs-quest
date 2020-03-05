@@ -17,7 +17,7 @@ const todoSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    required: true,
   },
   updatedAt: Date,
 });
