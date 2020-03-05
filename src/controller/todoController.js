@@ -2,8 +2,10 @@ import Todo from '../models/todo';
 
 exports.createTodo = async (req, res, next) => {
   try {
+    const now = Date.now();
     const todo = new Todo(req.body);
-    todo.updatedAt = Date.now();
+    todo.createdAt = now;
+    todo.updatedAt = now;
     const saveResult = await todo.save();
     res.send(saveResult);
   } catch (err) {
